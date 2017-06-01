@@ -1,0 +1,15 @@
+{
+    "name": "avandrevitor/bookapi",
+    "type": "project",
+    "require": {
+        "silex/silex": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André Vitor",
+            "email": "avandrevitor@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
