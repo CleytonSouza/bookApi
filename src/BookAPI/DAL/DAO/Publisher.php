@@ -1,12 +1,11 @@
 <?php
 
-// require_once "conexao.php";
-require_once "vendor/autoload.php";
-namespace src\BookAPI\DAL
+namespace BookAPI\DAL;
+
+use BookApi\Model\Business;
 
 class Publisher implements Persistable
 {
-	
 	protected $db;
 
 	public function __construct($db)
@@ -14,9 +13,9 @@ class Publisher implements Persistable
 		$this->db = $db;
 	}
 
-	public function find(Business $busines)
+	public function find(Business $Business)
 	{
-		$this->publisher_id = $business->getId();
+		$this->publisher_id = $Business->getId();
 
 		$query = 'SELECT * FROM nomedatabela WHERE publisher_id = :id';
 		$read = $db->prepare($query);
