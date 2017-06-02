@@ -67,10 +67,10 @@ local.properties
 .worksheet
 
 ### Eclipse Patch ###
-# Eclipse Core		
+# Eclipse Core
 .project
 
-# JDT-specific (Eclipse Java Development Tools)		
+# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
 ### Linux ###
@@ -215,12 +215,12 @@ tags
 *.asp
 *.cer
 *.csr
-*.css
-*.htm
-*.html
-*.js
-*.jsp
-*.php
+#*.css
+#*.htm
+#*.html
+#*.js
+#*.jsp
+#*.php
 *.rss
 *.xhtml
 
