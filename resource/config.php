@@ -30,7 +30,7 @@ class Database
 
 	}
 
-    #Funcao
+   
    public function conexao()
     {
         
