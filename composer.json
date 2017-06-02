@@ -1,19 +1,28 @@
 {
-    "name": "avandrevitor/bookapi",
-    "type": "project",
-    "require": {
-        "silex/silex": "*"
-    },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "André Vitor",
-            "email": "avandrevitor@gmail.com"
-        }
-    ],
-    "minimum-stability": "stable"
-
-
-
-
+  "name": "avandrevitor/bookapi",
+  "type": "project",
+  "require": {
+    "silex/silex": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "André Vitor",
+      "email": "avandrevitor@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "BookApi\\": "src/BookApi"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "BookApi\\": [
+        "src/BookApi",
+        "tests/unit/BookApi"
+      ]
+    }
+  }
 }
