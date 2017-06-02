@@ -5,8 +5,8 @@
 */
 class Database 
 {
-	
-  protected static $db;
+  #Guada conexão PDO
+  public $db;
 
 	function __construct()
 	{
@@ -16,7 +16,7 @@ class Database
     $password = "4linux";
 
    try {
-    
+          # Atribui o objeto PDO à variável
          self::$db = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
     
          self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -31,7 +31,7 @@ class Database
 	}
 
 
-   public static function conexao()
+   public function conexao()
     {
         
         if (!self::$db)
