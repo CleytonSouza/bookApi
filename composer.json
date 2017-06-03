@@ -4,6 +4,9 @@
   "require": {
     "silex/silex": "*"
   },
+   "require-dev": {
+	   "phpunit/phpunit": "*"
+  },
   "license": "MIT",
   "authors": [
     {
