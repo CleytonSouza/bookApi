@@ -34,7 +34,7 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers BookApi\Model\Book::getAuthors
+     * @covers BookApi\DAO\Author::getAuthors
      */
     public function getAuthors()
 
@@ -45,7 +45,7 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
 
         $author = $authors[0];
 
-        $this->assertInstanceof("BookApi\Model\Author",$author);
+        $this->assertInstanceof("BookApi\DAO\Author",$author);
 
     }
     
