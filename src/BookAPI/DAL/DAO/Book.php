@@ -1,6 +1,6 @@
 <?php
 
-namespace BookAPI\DAL;
+namespace BookAPI\DAL\DAO;
 
 class Book {
 	public $conn;
