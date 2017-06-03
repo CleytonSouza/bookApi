@@ -2,7 +2,7 @@
 
 require_once "vendor/autoload.php";
 namespace src\BookAPI\DAL;
-//use resource\config;
+use resource\config;
 
 Class Author {
 
@@ -10,7 +10,7 @@ Class Author {
 
     public function insert($name){
         try{
-            $con = new config();
+            $con = Database::conexao();
             $stmt = $con->prepare("INSERT INTO author(author_id, name) VALUES(?, ?)");
             $stmt->bindParam(1,null);
             $stmt->bindParam(2,$name, PDO::PARAM_STR);
@@ -23,7 +23,6 @@ Class Author {
     
     public function update($name, $id){
         try{
-            $con = new config();
             $stmt = $con->prepare("UPDATE author set name=:name WHERE id=:id");
             $stmt->bindParam(":nome",$name, PDO::PARAM_STR);
             $stmt->bindParam(":id",$id, PDO::PARAM_STR);
@@ -37,7 +36,6 @@ Class Author {
     
     public function delete($id){
         try{
-            $con = new config();
             $stmt = $con->prepare("DELETE FROM author WHERE id=:id");
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
@@ -56,7 +54,6 @@ Class Author {
     
     public function find($search){
         try{
-            $con = new config();
             $stmt = $con->prepare("SELECT * FROM author WHERE name = '".$search."'");
             $rows = $stmt->fetchObject( PDO::FETCH_OBJ );
             return $rows;
@@ -68,7 +65,6 @@ Class Author {
     
     public function all(){
         try{
-            $con = new config();
             $stmt = $con->prepare("SELECT * FROM author");
             $rows = $stmt->fetchObject( PDO::FETCH_OBJ );
             return $rows;
