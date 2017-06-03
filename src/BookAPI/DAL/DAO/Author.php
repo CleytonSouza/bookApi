@@ -1,7 +1,7 @@
 <?php
 
-require_once "vendor/autoload.php";
-namespace src\BookAPI\DAL;
+namespace BookApi\DAL\DAO;
+          
 use resource\config;
 
 Class Author {
@@ -17,7 +17,7 @@ Class Author {
             return $stmt->execute();
 
         }catch (PDOExecption $e){
-            return "Ocorreu um erro ao tentar executar esta ação:::" . . $e->getMessage();
+            return "Ocorreu um erro ao tentar executar esta ação:::" . $e->getMessage();
         }
     }
     
@@ -29,7 +29,7 @@ Class Author {
             return $stmt->execute();
             
         }catch (PDOExecption $e) {
-            return "Ocorreu um erro ao tentar executar esta ação:::" . . $e->getMessage();
+            return "Ocorreu um erro ao tentar executar esta ação:::" . $e->getMessage();
         }
         
     }
@@ -48,7 +48,7 @@ Class Author {
             }
             
         } catch (PDOExecption $e){
-            return "Ocorreu um erro ao tentar executar esta ação:::" . . $e->getMessage();
+            return "Ocorreu um erro ao tentar executar esta ação:::" . $e->getMessage();
         }
     }
     
@@ -59,7 +59,7 @@ Class Author {
             return $rows;
             
         } catch (PDOExecption $e){
-            return "Ocorreu um erro ao tentar executar esta ação:::" . . $e->getMessage();
+            return "Ocorreu um erro ao tentar executar esta ação:::" . $e->getMessage();
         }
     }
     

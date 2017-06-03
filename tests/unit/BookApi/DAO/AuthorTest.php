@@ -1,6 +1,6 @@
 <?php
 
-namespace BookApi\Model;
+namespace BookApi\DAL\DAO;
 
 class AuthorTest extends \PHPUnit\Framework\TestCase
 
