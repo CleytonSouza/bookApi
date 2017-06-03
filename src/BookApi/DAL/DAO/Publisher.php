@@ -17,7 +17,7 @@ class Publisher implements Persistable
 	{
 		$this->publisher_id = $Business->getId();
 
-		$query = 'SELECT * FROM nomedatabela WHERE publisher_id = :id';
+		$query = 'SELECT * FROM publisher WHERE publisher_id = :id';
 		$read = $db->prepare($query);
 		$read->bindValue(':id', $this->publisher_id, PDO::PARAM_INT);
 		$read->execute();
@@ -29,7 +29,7 @@ class Publisher implements Persistable
 	{
 		$this->publisher_id = $business->getId();
 
-		$query = 'SELECT * FROM nomedatabela';
+		$query = 'SELECT * FROM publisher';
 		$read = $db->prepare($query);
 		$delete->bindValue(':id', $this->publisher_id, PDO::PARAM_INT);
 		$read->execute();
@@ -43,7 +43,7 @@ class Publisher implements Persistable
 
 		try
 		{
-			$query = 'INSERT INTO nometabela (nome) VALUES (:nome)';
+			$query = 'INSERT INTO publisher (name) VALUES (:nome)';
 
 			$insert = $db->prepare($query);
 			$insert->bindValue(':ǹome', $this->nome, PDO::PARAM_STR);
@@ -58,7 +58,7 @@ class Publisher implements Persistable
 	{
 		$this->publisher_id = $business->getId();
 
-		$query = 'DELETE FROM nomedatabela WHERE publisher_id = :id';
+		$query = 'DELETE FROM publisher WHERE publisher_id = :id';
 		$delete = $db->prepare($query);
 		$delete->bindValue(':id', $this->publisher_id, PDO::PARAM_INT);
 		$delete->execute();
@@ -73,7 +73,7 @@ class Publisher implements Persistable
 
 		try
 		{
-			$query = 'UPDATE nomedatabela set nome = :nome WHERE id = :id';
+			$query = 'UPDATE publisher set name = :nome WHERE publisher_id = :id';
 
 			$update = $db->prepare($query);
 			$update->bindValue(':ǹome', $this->nome, PDO::PARAM_STR);
