@@ -34,19 +34,31 @@ class BookTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @covers BookApi\Model\Book::getAuthors
+     * @covers BookApi\Model\Book::getIsbn
      */
-    public function getAuthors()
-
+    public function testGetIsbn()
     {
-        $authors = $this->object->getAuthors();
-
-        $this->assertInternalType("array",$authors);
-
-        $author = $authors[0];
-
-        $this->assertInstanceof("BookApi\Model\Author",$author);
-
+        $this->assertInternalType("string",$this->object->getIsbn());
     }
 
+
+    /**
+     * @covers BookApi\Model\Book::toArray
+     */
+    public function testToArray()
+    {
+        $this->assertInternalType("array",$this->object->toArray());
+        $this->assertArrayHasKey('isbn', $this->object->toArray());
+        $this->assertArrayHasKey('title', $this->object->toArray());
+    }
+
+    /**
+    /@cover BookApi\Model\Book::getTitle
+    */
+    public function testGetTitle()
+    {
+        $this->object->setTitle("Harry Potter");
+        $this->assertInternalType('string',$this->object->getTitle());
+        $this->assertEquals("Harry Potter",$this->object->getTitle());
+    }
 }
