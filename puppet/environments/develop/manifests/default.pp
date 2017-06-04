@@ -43,19 +43,44 @@ class webserver{
   include apache::mod::rewrite
   include apache::mod::vhost_alias
 
-  apache::vhost { 'api.book.com':         		  	  					#	Dominio definido para o site
+  apache::vhost { 'book.com':         		  	  					#	Dominio definido para o site
+    serveraliases => [
+      'api.book.com',
+      'dev.book.com',
+    ],
+    setenv          => [
+      'APPLICATION_DEBUG true',
+      'APPLICATION_DB_DRIVE pdo_mysql',
+      'APPLICATION_DB_DBNAME bookApi',
+      'APPLICATION_DB_HOST localhost',
+      'APPLICATION_DB_PORT 3306',
+      'APPLICATION_DB_USER application_user',
+      'APPLICATION_DB_PASSWORD 123456789'
+    ],
     priority		    => 15,										  							# Prioridade do Site no Apache
     port          	=> '80',								  								# Porta que o Site está ouvindo no Apache
     docroot       	=> '/var/www/web/',						  					# Diretório Raiz do Site
     directories => [{
       path 			=> '/var/www/web/',		  											# Diretório Raiz. Definido no Vagrantfile (server.vm.synced_folder)
-      directoryindex => 'index.html',													# Indice do Diretorio.
+      directoryindex => 'index.php index.html',								# Indice do Diretorio.
       options 	=> ['Indexes','FollowSymLinks','MultiViews'],	# Opções de Visualização de Conteúdo
 #      order 		=> 'allow,deny',															# Aplicação das permissões de acesso.
 #      allow 		=> 'from all'											  					# Disponivel para
+      allow_override => [ 'None' ],                           # Permite override a partir de um .htaccess ( neste caso não )
+      rewrites => [                                           # Aplica regras de rewrite de urls
+        {
+          rewrite_cond => [                                   # Link https://silex.sensiolabs.org/doc/2.0/web_servers.html#apache
+            '%{REQUEST_FILENAME} !-d',
+            '%{REQUEST_FILENAME} !-f'
+          ],
+          rewrite_rule => ['^ index.php [QSA,L]'],
+        },
+      ],
     }],
     docroot_owner 	=> 'www-data',														# Usuário Dono da Pasta ( Usuario de Serviço no Linux )
-    docroot_group 	=> 'www-data'															# Grupo Dono da Pasta
+    docroot_group 	=> 'www-data',														# Grupo Dono da Pasta
+    access_log_file => 'api.book.com_access.log',             # Logs de acesso
+    error_log_file  => 'api.book.com_error.log',              # Logs de erros
   }
 }
 
@@ -93,7 +118,6 @@ class language{
       json => {},
       xsl => {},
       xmlrpc => {},
-      xdebug => {},
     },
   }
 }
