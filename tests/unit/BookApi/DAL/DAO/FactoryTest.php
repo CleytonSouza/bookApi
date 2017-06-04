@@ -4,10 +4,11 @@ namespace BookApi\DAL\DAO;
 
 class FactoryTest extends \PHPUnit\Framework\TestCase
 {
-	/**
+    /**
      * @var Sum
      */
     protected $object;
+
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -28,7 +29,7 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testCreateConnection()
     {
-    	$this->assertInstanceOf("\PDO",$this->object->createConnection());
+        $this->assertInstanceOf("\PDO", $this->object->createConnection());
     }
 
 }

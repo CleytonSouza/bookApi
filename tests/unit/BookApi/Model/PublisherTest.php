@@ -11,6 +11,7 @@ class PublisherTest extends \PHPUnit\Framework\TestCase
      * @var Sum
      */
     protected $object;
+
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -43,11 +44,11 @@ class PublisherTest extends \PHPUnit\Framework\TestCase
     {
         $authors = $this->object->getAuthors();
 
-        $this->assertInternalType("array",$authors);
+        $this->assertInternalType("array", $authors);
 
         $author = $authors[0];
 
-        $this->assertInstanceof("BookApi\Model\Author",$author);
+        $this->assertInstanceof("BookApi\Model\Author", $author);
 
     }
 

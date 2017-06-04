@@ -5,7 +5,7 @@
     "silex/silex": "*"
   },
   "require-dev": {
-	   "phpunit/phpunit": "*"
+    "phpunit/phpunit": "*"
   },
   "license": "MIT",
   "authors": [

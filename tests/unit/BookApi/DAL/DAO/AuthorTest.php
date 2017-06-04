@@ -9,6 +9,7 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
      * @var Sum
      */
     protected $object;
+
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -41,23 +42,33 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
     {
         $authors = $this->object->getAuthors();
 
-        $this->assertInternalType("array",$authors);
+        $this->assertInternalType("array", $authors);
 
         $author = $authors[0];
 
-        $this->assertInstanceof("BookApi\DAO\Author",$author);
+        $this->assertInstanceof("BookApi\DAO\Author", $author);
 
     }
-    
-    public function insert(){}
-    
-    public function update(){}
-    
-    public function delete(){}
-    
-    public function find(){}
-    
-    public function all(){}
-        
+
+    public function insert()
+    {
+    }
+
+    public function update()
+    {
+    }
+
+    public function delete()
+    {
+    }
+
+    public function find()
+    {
+    }
+
+    public function all()
+    {
+    }
+
 
 }

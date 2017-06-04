@@ -9,6 +9,7 @@ class BookTest extends \PHPUnit\Framework\TestCase
      * @var Sum
      */
     protected $object;
+
     /**
      * Sets up the fixture, for example, opens a network connection.
      * This method is called before a test is executed.
@@ -38,7 +39,7 @@ class BookTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetIsbn()
     {
-        $this->assertInternalType("string",$this->object->getIsbn());
+        $this->assertInternalType("string", $this->object->getIsbn());
     }
 
 
@@ -47,18 +48,18 @@ class BookTest extends \PHPUnit\Framework\TestCase
      */
     public function testToArray()
     {
-        $this->assertInternalType("array",$this->object->toArray());
+        $this->assertInternalType("array", $this->object->toArray());
         $this->assertArrayHasKey('isbn', $this->object->toArray());
         $this->assertArrayHasKey('title', $this->object->toArray());
     }
 
     /**
-    /@cover BookApi\Model\Book::getTitle
-    */
+     * /@cover BookApi\Model\Book::getTitle
+     */
     public function testGetTitle()
     {
         $this->object->setTitle("Harry Potter");
-        $this->assertInternalType('string',$this->object->getTitle());
-        $this->assertEquals("Harry Potter",$this->object->getTitle());
+        $this->assertInternalType('string', $this->object->getTitle());
+        $this->assertEquals("Harry Potter", $this->object->getTitle());
     }
 }

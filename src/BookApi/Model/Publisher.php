@@ -6,7 +6,7 @@ class Publisher implements Business
 {
     protected $name;
 
-    public function books ()
+    public function books()
     {
 
     }

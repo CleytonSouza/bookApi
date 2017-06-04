@@ -26,7 +26,7 @@ class Factory
             );
             $connection->exec('SET NAMES utf8');
             return $connection;
-        }catch(PDOException $e){
+        } catch (PDOException $e) {
             throw $e;
         }
     }

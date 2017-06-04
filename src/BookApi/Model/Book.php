@@ -3,20 +3,20 @@ namespace BookApi\Model;
 
 class Book implements Business
 {
-    protected   $isbn;
-    protected   $name;
+    protected $isbn;
+    protected $name;
 
-    public function authors ()
+    public function authors()
     {
 
     }
 
-    public function isbn ($isbn)
+    public function isbn($isbn)
     {
 
     }
 
-    public function publishers ()
+    public function publishers()
     {
 
     }

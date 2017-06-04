@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__).'/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 
@@ -14,46 +14,43 @@ $app = new Silex\Application();
 ------------------------------------------------*/
 
 //Rota GET /books
-$app->get('/books',function(){
+$app->get('/books', function () {
 
-	return new JsonResponse('Rota /books', 200);
+    return new JsonResponse('Rota /books', 200);
 
 });
 
 
 //Rota GET /books/isbn/{isbn}
-$app->get('/books/isbn/{isbn}', function($isbn){
+$app->get('/books/isbn/{isbn}', function ($isbn) {
 
-	return new JsonResponse('Rota /books/isbn'. $isbn . ' ', 200);
-	
+    return new JsonResponse('Rota /books/isbn' . $isbn . ' ', 200);
+
 });
 
 
 //Rota POST /books
-$app->post('/books', function(){
+$app->post('/books', function () {
 
-	return new JsonResponse('Rota Recebida /books', 200);
+    return new JsonResponse('Rota Recebida /books', 200);
 
 });
 
 
 //Rota PUT /books
-$app->put('/books', function(){
+$app->put('/books', function () {
 
-	return new JsonResponse('Rota Atualizada /books', 200);
+    return new JsonResponse('Rota Atualizada /books', 200);
 
 });
 
 
 //Rota DELETE /books/isbn/{isbn}
-$app->delete('/books/isbn/{isbn}', function($isbn){
+$app->delete('/books/isbn/{isbn}', function ($isbn) {
 
-	return new JsonResponse('Rota Excluida /books/isbn'. $isbn . ' ', 200);
-	
+    return new JsonResponse('Rota Excluida /books/isbn' . $isbn . ' ', 200);
+
 });
-
-
-
 
 
 /*----------------------------------------------
@@ -61,44 +58,39 @@ $app->delete('/books/isbn/{isbn}', function($isbn){
 ------------------------------------------------*/
 
 //Rota GET /author
-$app->get('/author',function(){
+$app->get('/author', function () {
 
-	return new JsonResponse('Rota /author', 200);
+    return new JsonResponse('Rota /author', 200);
 
 });
 
 //Rota GET /author/name/{name}
-$app->get('/author/name/{name}', function($name){
+$app->get('/author/name/{name}', function ($name) {
 
-	return new JsonResponse('Rota /author/name'. $isbn . ' ', 200);
-	
+    return new JsonResponse('Rota /author/name' . $isbn . ' ', 200);
+
 });
 
 //Rota POST /author
-$app->post('/author', function(){
+$app->post('/author', function () {
 
-	return new JsonResponse('Rota Recebida /author', 200);
+    return new JsonResponse('Rota Recebida /author', 200);
 
 });
 
 //Rota PUT /author
-$app->put('/author', function(){
+$app->put('/author', function () {
 
-	return new JsonResponse('Rota Atualizada /author', 200);
+    return new JsonResponse('Rota Atualizada /author', 200);
 
 });
 
 //Rota DELETE /author/name/{name}
-$app->delete('/author/name/{name}', function($name){
+$app->delete('/author/name/{name}', function ($name) {
 
-	return new JsonResponse('Rota Excluida /author/name'. $isbn . ' ', 200);
-	
+    return new JsonResponse('Rota Excluida /author/name' . $isbn . ' ', 200);
+
 });
-
-
-
-
-
 
 
 /*----------------------------------------------
@@ -106,39 +98,39 @@ $app->delete('/author/name/{name}', function($name){
 ------------------------------------------------*/
 
 //Rota GET /publisher
-$app->get('/publisher',function(){
+$app->get('/publisher', function () {
 
-	return new JsonResponse('Rota /publisher', 200);
+    return new JsonResponse('Rota /publisher', 200);
 
 });
 
 //Rota GET /publisher/name/{name}
-$app->get('/publisher/name/{name}', function($name){
+$app->get('/publisher/name/{name}', function ($name) {
 
-    return new JsonResponse('Rota /publisher/name'. $isbn . '', 200);
-	
+    return new JsonResponse('Rota /publisher/name' . $isbn . '', 200);
+
 });
 
 //Rota POST //publisher
-$app->post('/publisher', function(){
+$app->post('/publisher', function () {
 
-	return new JsonResponse('Rota Recebida /publisher', 200);
+    return new JsonResponse('Rota Recebida /publisher', 200);
 
 });
 
 
 //Rota PUT /publisher
-$app->put('/publisher', function(){
+$app->put('/publisher', function () {
 
-	return new JsonResponse('Rota Atualizada /publisher', 200);
+    return new JsonResponse('Rota Atualizada /publisher', 200);
 
 });
 
 //Rota DELETE /publisher/name/{name}
-$app->delete('/publisher/name/{name}', function($name){
+$app->delete('/publisher/name/{name}', function ($name) {
 
-	return new JsonResponse('Rota Excluida /publisher/name'. $isbn . ' ', 200);
-	
+    return new JsonResponse('Rota Excluida /publisher/name' . $isbn . ' ', 200);
+
 });
 
 

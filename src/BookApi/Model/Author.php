@@ -7,12 +7,12 @@ class Author implements Business
     protected $firstName;
     protected $lastName;
 
-    public function books ()
+    public function books()
     {
 
     }
 
-    public function isbn ($isbn)
+    public function isbn($isbn)
     {
 
     }
