@@ -1,5 +1,12 @@
 
-# Created by https://www.gitignore.io/api/web,vim,linux,cloud9,vagrant,eclipse,windows,netbeans,composer,phpstorm,notepadpp,sublimetext
+# Created by https://www.gitignore.io/api/puppet-librarian,vim,linux,cloud9,vagrant,eclipse,windows,netbeans,composer,phpstorm,notepadpp,sublimetext
+
+### puppet-librarian ###
+# puppet-librarian - https://github.com/rodjek/librarian-puppet
+puppet/.tmp/
+puppet/modules/
+!puppet/modules/.gitignore
+puppet/.librarian/
 
 ### Cloud9 ###
 # Cloud9 IDE - http://c9.io
@@ -211,19 +218,6 @@ Session.vim
 # auto-generated tag files
 tags
 
-### Web ###
-*.asp
-*.cer
-*.csr
-#*.css
-#*.htm
-#*.html
-#*.js
-#*.jsp
-#*.php
-*.rss
-*.xhtml
-
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -246,3 +240,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/web,vim,linux,cloud9,vagrant,eclipse,windows,netbeans,composer,phpstorm,notepadpp,sublimetext
+
+# Extra
+html/

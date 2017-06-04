@@ -34,3 +34,8 @@ indent_size = 4
 [{composer.json,.travis.yml}]
 indent_style = space
 indent_size = 2
+
+# Vagrantfile
+[Vagrantfile]
+indent_style = space
+indent_size = 4
