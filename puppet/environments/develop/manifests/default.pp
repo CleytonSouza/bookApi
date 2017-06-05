@@ -15,10 +15,10 @@ class utils{
   }
 }
 
-class admins{
-  user {'vagrant':
-    ensure    => present,
-    password  => '$1$ImQjhUIS$oG7ejFp/tReDLujM2nkE80',        # vagrant
+class accounts {
+  user { 'vagrant':
+    ensure   => present,
+    password => '$1$ImQjhUIS$oG7ejFp/tReDLujM2nkE80',
   }
 }
 
@@ -26,6 +26,7 @@ class webserver{
 
   class {
     'apache':
+      default_vhost => false,
       mpm_module => false,
   }
 
@@ -51,7 +52,7 @@ class webserver{
     setenv          => [
       'APPLICATION_DEBUG true',
       'APPLICATION_DB_DRIVE pdo_mysql',
-      'APPLICATION_DB_DBNAME bookApi',
+      'APPLICATION_DB_NAME bookApi',
       'APPLICATION_DB_HOST localhost',
       'APPLICATION_DB_PORT 3306',
       'APPLICATION_DB_USER application_user',
@@ -154,13 +155,13 @@ class database {
 node "apibook" {
 
   include utils
-  include admins
+  include accounts
   include webserver
   include language
   include database
 
-  Class['utils'] -> Class['admins']
-  Class['admins'] -> Class['webserver']
+  Class['utils'] -> Class['accounts']
+  Class['accounts'] -> Class['webserver']
   Class['webserver'] -> Class['language']
   Class['language'] -> Class['database']
 

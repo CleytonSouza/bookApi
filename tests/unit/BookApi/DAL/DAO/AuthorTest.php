@@ -3,7 +3,6 @@
 namespace BookApi\DAL\DAO;
 
 class AuthorTest extends \PHPUnit\Framework\TestCase
-
 {
     /**
      * @var Sum
@@ -15,11 +14,8 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
      * This method is called before a test is executed.
      */
     protected function setUp()
-
     {
-
         $this->object = new Author();
-
     }
 
     /**
@@ -27,18 +23,14 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
      * This method is called after a test is executed.
      */
     protected function tearDown()
-
     {
-
         unset($this->object);
-
     }
 
     /**
      * @covers BookApi\DAO\Author::getAuthors
      */
     public function getAuthors()
-
     {
         $authors = $this->object->getAuthors();
 
@@ -47,7 +39,6 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
         $author = $authors[0];
 
         $this->assertInstanceof("BookApi\DAO\Author", $author);
-
     }
 
     public function insert()
@@ -69,6 +60,4 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
     public function all()
     {
     }
-
-
 }

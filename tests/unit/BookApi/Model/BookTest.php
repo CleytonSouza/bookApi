@@ -2,8 +2,9 @@
 
 namespace BookApi\Model;
 
-class BookTest extends \PHPUnit\Framework\TestCase
+use BookApi\Model\Publisher;
 
+class BookTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var Sum
@@ -15,11 +16,14 @@ class BookTest extends \PHPUnit\Framework\TestCase
      * This method is called before a test is executed.
      */
     protected function setUp()
-
     {
-
-        $this->object = new Book();
-
+        $this->object = new Book(
+            new Publisher('Novatec'),
+            'PHP Moderno: Novos recursos e boas práticas',
+            array(
+                new Author('Josh','Lockhart')
+            )
+        );
     }
 
     /**
@@ -27,15 +31,12 @@ class BookTest extends \PHPUnit\Framework\TestCase
      * This method is called after a test is executed.
      */
     protected function tearDown()
-
     {
-
         unset($this->object);
-
     }
 
     /**
-     * @covers BookApi\Model\Book::getIsbn
+     * @covers Book::getIsbn
      */
     public function testGetIsbn()
     {
@@ -44,22 +45,21 @@ class BookTest extends \PHPUnit\Framework\TestCase
 
 
     /**
-     * @covers BookApi\Model\Book::toArray
+     * @covers Book::toArray
      */
     public function testToArray()
     {
         $this->assertInternalType("array", $this->object->toArray());
-        $this->assertArrayHasKey('isbn', $this->object->toArray());
-        $this->assertArrayHasKey('title', $this->object->toArray());
+        $this->assertArrayHasKey("isbn", $this->object->toArray());
+        $this->assertArrayHasKey("name", $this->object->toArray());
     }
 
     /**
-     * /@cover BookApi\Model\Book::getTitle
+     * /@cover Book::getTitle
      */
     public function testGetTitle()
     {
-        $this->object->setTitle("Harry Potter");
-        $this->assertInternalType('string', $this->object->getTitle());
-        $this->assertEquals("Harry Potter", $this->object->getTitle());
+        $this->assertInternalType('string', $this->object->getName());
+        $this->assertEquals('PHP Moderno: Novos recursos e boas práticas', $this->object->getName());
     }
 }

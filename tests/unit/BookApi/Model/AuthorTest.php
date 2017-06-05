@@ -5,7 +5,6 @@ namespace BookApi\Model;
 use BookApi\Model\Book;
 
 class AuthorTest extends \PHPUnit\Framework\TestCase
-
 {
     /**
      * @var Sum
@@ -17,11 +16,8 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
      * This method is called before a test is executed.
      */
     protected function setUp()
-
     {
-
         $this->object = new Author();
-
     }
 
     /**
@@ -29,11 +25,8 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
      * This method is called after a test is executed.
      */
     protected function tearDown()
-
     {
-
         unset($this->object);
-
     }
 
     /**
@@ -41,7 +34,6 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
      * @dataProvider additionProviderBook
      */
     public function testGetBooks()
-
     {
         $books = $this->object->books();
 
@@ -50,7 +42,6 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
         $book = $books[0];
 
         $this->assertInstanceof("BookApi\Model\Book", $book);
-
     }
 
 
@@ -59,5 +50,4 @@ class AuthorTest extends \PHPUnit\Framework\TestCase
         $book = new Book();
         return array($book);
     }
-
 }

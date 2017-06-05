@@ -29,7 +29,13 @@ class FactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testCreateConnection()
     {
-        $this->assertInstanceOf("\PDO", $this->object->createConnection());
-    }
+        putenv('APPLICATION_DB_HOST=localhost');
+        putenv('APPLICATION_DB_NAME=bookapi');
+        putenv('APPLICATION_DB_PORT=3306');
+        putenv('APPLICATION_DB_USER=application_user');
+        putenv('APPLICATION_DB_PASSWORD=123456789');
+        putenv('APPLICATION_DB_CHARSET=utf8');
 
+        $this->assertInstanceOf("PDO", $this->object->createConnection());
+    }
 }

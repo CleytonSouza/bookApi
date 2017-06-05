@@ -1,18 +1,11 @@
 <?php
 
-namespace BookAPI\DAL;
+namespace BookApi\DAL\DAO;
 
 use BookApi\Model\Business;
 
 class Publisher implements Persistable
 {
-    protected $db;
-
-    public function __construct($db)
-    {
-        $this->db = $db;
-    }
-
     public function find(Business $Business)
     {
         $this->publisher_id = $Business->getId();
@@ -50,10 +43,9 @@ class Publisher implements Persistable
         } catch (PDOException $err) {
             return "Erro: " . $err->getMessage();
         }
-
     }
 
-    public function destroy(Business $busines)
+    public function delete(Business $busines)
     {
         $this->publisher_id = $business->getId();
 

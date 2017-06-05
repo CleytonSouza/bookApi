@@ -1,12 +1,7 @@
 {
   "name": "avandrevitor/bookapi",
   "type": "project",
-  "require": {
-    "silex/silex": "*"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "*"
-  },
+  "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
@@ -14,7 +9,16 @@
       "email": "avandrevitor@gmail.com"
     }
   ],
-  "minimum-stability": "stable",
+  "require": {
+    "silex/silex": "^2.1",
+    "squizlabs/php_codesniffer": "*",
+    "phing/phing": "^2.16"
+  },
+  "require-dev": {
+    "texthtml/whoops-silex": "^1.0",
+    "phpunit/phpunit": "^5.7",
+    "friendsofphp/php-cs-fixer": "^2.3"
+  },
   "autoload": {
     "psr-4": {
       "BookApi\\": "src/BookApi"
